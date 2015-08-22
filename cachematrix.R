@@ -22,12 +22,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 }
 
-
-## Write a short comment describing this function
+## Function to calculate the inverse of the Matrix and 
+##cache the result in a different Environment
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
-  ## x is the output of makeCacheMatrix
+## Return a matrix that is the inverse of 'x'
+## x is the output of makeCacheMatrix
   i <- x$getinv()
   # if the inverse has already been calculated
   if(!is.null(i)) {
@@ -45,27 +45,32 @@ cacheSolve <- function(x, ...) {
 }
 
 ## Function to test caching
-testCaching = function(mat){
+#testCaching = function(mat){
   ## mat - a Square invertible matrix
   
   #Calling makeCaheMatrix and storing the value in y
-  y = makeCacheMatrix(mat)
+#  y = makeCacheMatrix(mat)
   
   #Calling the cacheSolve by passing y and calculating the time it takes to return the value
-  start.time = Sys.time()
-  cacheSolve(y)
-  dur = Sys.time() - start.time
-  print(dur)
+#  start.time = Sys.time()
+#  cacheSolve(y)
+#  dur = Sys.time() - start.time
+#  print(dur)
   
   #Calling the cacheSolve by passing y and calculating the time it takes to return the value
-  start.time = Sys.time()
-  cacheSolve(y)
-  dur = Sys.time() - start.time
-  print(dur)
-}
+#  start.time = Sys.time()
+#  cacheSolve(y)
+#  dur = Sys.time() - start.time
+#  print(dur)
+#}
 
 #Creating a matrix of 1000X1000 and passing it to testCaching
-set.seed(1)
-x <- rnorm(1000000,1)
-mat = matrix(x,nrow = 1000, ncol = 1000)
-testCaching(mat)
+#set.seed(1)
+#x <- rnorm(1000000,1)
+#mat = matrix(x,nrow = 1000, ncol = 1000)
+#testCaching(mat)
+
+## Result
+#Time difference of 2.069739 secs
+#getting cached data
+#Time difference of 0.0002830029 secs
